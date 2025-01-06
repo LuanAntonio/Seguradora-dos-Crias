@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de Seguros</title>
+    <%-include("../partials/cabecalho.ejs")%>
+</head>
+<body>
+    <div class="container">
+        <%if(status){%>
+            <div class="alert alert-success alert-dismissible">
+                <button class="btn-close" data-bs-dimiss="alert"></button>
+                Cadastrado com <b>sucesso!</b>
+            </div>
+        <%}%>
+        <table class="table table-striped">
+            <tr>
+                <th>Preco</th>
+                <th>Tipo</th>
+                <th>Distribuidora</th>
+                <th>Detalhar</th>
+            </tr>
+            <% seguros.forEach(seguro=>{ %>
+                <tr>
+                    <td><%= seguro.preco %></td>
+                    <td><%= seguro.tipo %></td>
+                    <td><%= seguro.distribuidora %></td>
+                    <td><a href="/seguros/<%=seguro.seguro.id %>">Detalhar</a></td>
+                </tr>
+            <%})%>
+        </table>
+    </div>
+    <%-include("../partials/rodape.ejs")%>  
+</body>
+</html>

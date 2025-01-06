@@ -1,0 +1,9 @@
+<% include('../layout') %>
+
+<h2>Detalhes do Tipo de Seguro</h2>
+
+<p><strong>Nome:</strong> <%= tipoSeguro.nome %></p>
+<p><strong>Descrição:</strong> <%= tipoSeguro.descricao %></p>
+<p><strong>Preço:</strong> R$ <%= tipoSeguro.preco.toFixed(2) %></p>
+
+<a href="/tipos-seguro">Voltar para a lista de Tipos de Seguro</a>

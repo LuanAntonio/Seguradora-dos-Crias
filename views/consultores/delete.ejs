@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir Consultor</title>
+    <%- include("../partials/cabecalho.ejs") %>
+</head>
+<body>
+    <h1>Tem certeza que deseja excluir o consultor?</h1>
+    <p><strong>Nome:</strong> <%= consultor.nome %></p>
+    <p><strong>E-mail:</strong> <%= consultor.email %></p>
+    <p><strong>Idade:</strong> <%= consultor.idade %></p>
+    <form action="/consultores/delete/<%= consultor._id %>" method="POST">
+        <button type="submit" class="btn btn-danger">Excluir</button>
+    </form>
+    <a href="/consultores">Cancelar</a>
+    <%- include("../partials/rodape.ejs") %>
+</body>
+</html>

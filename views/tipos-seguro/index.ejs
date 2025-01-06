@@ -1,0 +1,38 @@
+<h1>Tipos de Seguro</h1>
+
+<% if (tipos.length === 0) { %>
+    <p>Nenhum tipo de seguro encontrado.</p>
+<% } else { %>
+    <table border="1" style="width: 100%; border-collapse: collapse; text-align: left;">
+        <thead>
+            <tr>
+                <th>Nome</th>
+                <th>Descrição</th>
+                <th>Preço</th>
+                <th>Detalhes</th>
+                <th>Editar</th>
+                <th>Excluir</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% tipos.forEach(tipo => { %>
+                <tr>
+                    <td><%= tipo.nome %></td>
+                    <td><%= tipo.descricao %></td>
+                    <td>R$ <%= tipo.preco %></td>
+                    <td>
+                        <a href="/tipos-seguro/<%= tipo._id %>">Ver Detalhes</a>
+                    </td>
+                    <td>
+                        <a href="/tipos-seguro/edit/<%= tipo._id %>">Editar</a>
+                    </td>
+                    <td>
+                        <form action="/tipos-seguro/delete/<%= tipo._id %>" method="POST" style="display: inline;">
+                            <button type="submit" class="btn btn-danger">Excluir</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }) %>
+        </tbody>
+    </table>
+<% } %>

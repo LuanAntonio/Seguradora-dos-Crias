@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width= , initial-scale=1.0">
+    <title>Cadastro</title>
+    <%-include("../partials/cabecalho.ejs")%>
+</head>
+<body>
+    <div class="container">
+        <form action="/seguros" method="POST">
+           <div>
+
+               Tipo: <input required type="text" name="tipo" class="form-control">
+           </div>
+           <div>
+               Preco: <input required type="text" name="preco" class="form-control">
+           </div>
+           <div>
+               Distribuidora: <input required type="text" name="distribuidora" class="form-control">
+           </div>
+           <div>
+               <input type="submit" value="Salvar" class="btn btn-success">
+           </div>
+        </form> 
+    </div>
+         <%-include("../partials/rodape.ejs")%>                                                                                                                 
+</body>
+</html>

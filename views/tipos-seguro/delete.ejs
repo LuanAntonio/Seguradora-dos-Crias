@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Excluir Tipo de Seguro</title>
+    <%- include("../partials/cabecalho.ejs") %>
+</head>
+<body>
+    <h1>Tem certeza que deseja excluir o tipo de seguro?</h1>
+    <p><strong>Nome:</strong> <%= tipoDeSeguro.nome %></p>
+    <p><strong>Descrição:</strong> <%= tipoDeSeguro.descricao %></p>
+    <p><strong>Preço:</strong> R$ <%= tipoDeSeguro.preco.toFixed(2) %></p>
+    <form action="/tipos-deSeguro/delete/<%= tipoDeSeguro._id %>" method="POST">
+        <button type="submit" class="btn btn-danger">Excluir</button>
+    </form>
+    <a href="/tipos-deSeguro">Cancelar</a>
+    <%- include("../partials/rodape.ejs") %>
+</body>
+</html>

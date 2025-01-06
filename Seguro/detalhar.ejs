@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalhes do Seguro</title>
+    <%- include("partials/cabecalho.ejs") %>
+</head>
+<body>
+    <h1>Detalhes do Seguro</h1>
+    <div>
+        <strong>Tipo:</strong> <%= seguro.tipo %>
+    </div>
+    <div>
+        <strong>Preço:</strong> R$ <%= seguro.preco.toFixed(2) %>
+    </div>
+    <div>
+        <strong>Distribuidora:</strong> <%= seguro.distribuidora %>
+    </div>
+    <a href="/seguros">Voltar para a lista de Seguros</a>
+    <%- include("../partials/rodape.ejs") %>
+</body>
+</html>
